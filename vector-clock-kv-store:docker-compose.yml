@@ -1,0 +1,19 @@
+
+services:
+  node1:
+    build: .
+    command: python3 node.py node1 node1,node2,node3
+    ports:
+      - "5001:5000"
+
+  node2:
+    build: .
+    command: python3 node.py node2 node1,node2,node3
+    ports:
+      - "5002:5000"
+
+  node3:
+    build: .
+    command: python3 node.py node3 node1,node2,node3
+    ports:
+      - "5003:5000"
